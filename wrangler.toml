@@ -1,0 +1,27 @@
+name = "hono-worker"
+compatibility_date = "2024-09-05"
+compatibility_flags = [ "nodejs_compat" ]
+
+[build]
+command = "yarn generate"
+cwd = "."
+watch_dir = "./src"
+
+[env.dev]
+
+tail_consumers = [
+	{ service = "tail-worker-dev" }
+]
+
+[env.dev.vars]
+
+###############################################################################
+# PRODUCTION CONFIG
+###############################################################################
+[env.prod]
+
+tail_consumers = [
+	{ service = "tail-worker-prod" }
+]
+
+[env.prod.vars]

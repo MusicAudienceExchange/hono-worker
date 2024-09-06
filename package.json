@@ -1,0 +1,16 @@
+{
+  "name": "hono-worker",
+  "scripts": {
+    "dev": "wrangler dev dist/index.ts",
+    "deploy": "wrangler deploy --minify dist/index.ts",
+    "generate": "cp -r src/ dist/ && typia generate --input src/types --output dist/types --project tsconfig.json"
+  },
+  "dependencies": {
+    "hono": "^4.5.11",
+    "typia": "^6.9.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "wrangler": "^3.57.2"
+  }
+}

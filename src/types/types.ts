@@ -1,0 +1,1 @@
+import { typia } from "./header";
